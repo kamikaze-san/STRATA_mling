@@ -52,8 +52,13 @@ python main.py --modality text \
 ## How it connects to the rest of the project
 
 STRATA's attack logs feed the preference-pair pipeline and the held-out evaluation set in
-[Multilingual_JB](https://github.com/kamikaze-san/Multilingual_JB) (labelling, CuratorKIT, DPO + LoRA on
-Hugging Face Jobs, evaluation of the repaired model).
+[Mling_JB](https://github.com/kamikaze-san/Mling_JB): labelling, CuratorKIT, DPO + LoRA and the stage-2 repair on Hugging
+Face Jobs, and evaluation of the repaired model.
+
+- Write-up: [Mling_JB/WRITEUP.md](https://github.com/kamikaze-san/Mling_JB/blob/main/WRITEUP.md)
+- Models: https://huggingface.co/collections/kamikaze-san/tiny-aya-multilingual-safety-models-6af997c8a617ddc3326889bc
+- Datasets (attack conversations gated):
+  https://huggingface.co/collections/kamikaze-san/tiny-aya-multilingual-safety-datasets-6af9982d7e17226835a9ac36
 
 ## License
 
