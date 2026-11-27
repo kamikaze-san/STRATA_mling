@@ -47,7 +47,10 @@ python main.py --modality text \
 
 `python main.py --help` lists every option. Text mode needs the withheld prompt files in
 `configs/text_mode/` (see `WITHHELD.md`) and a goals file you provide. `run_topup2.sh`, `run_topup3.sh` and
-`run_heldout_test.sh` are the exact commands used for the hackathon runs.
+`run_heldout_test.sh` are the exact commands used for the hackathon runs. `run_reattack.sh` runs the live adaptive
+attacks in the paper (App. C): STRATA keeps learning (`--phase train`) against a fixed target on 41 never-attacked
+goals x 8 rounds, with the same budget per run (`base`; `fb_cold`: the final model from the same starting library;
+`fb_warm`: the final model starting from the base run's end state).
 
 ## How it connects to the rest of the project
 
@@ -55,7 +58,8 @@ STRATA's attack logs feed the preference-pair pipeline and the held-out evaluati
 [Mling_JB](https://github.com/kamikaze-san/Mling_JB): labelling, CuratorKIT, DPO + LoRA and the stage-2 repair on Hugging
 Face Jobs, and evaluation of the repaired model.
 
-- Write-up: [Mling_JB/WRITEUP.md](https://github.com/kamikaze-san/Mling_JB/blob/main/WRITEUP.md)
+- Paper (Stage 2): [Mling_JB/paper/main.pdf](https://github.com/kamikaze-san/Mling_JB/blob/main/paper/main.pdf)
+- Stage 1 write-up: [Mling_JB/WRITEUP.md](https://github.com/kamikaze-san/Mling_JB/blob/main/WRITEUP.md)
 - Models: https://huggingface.co/collections/kamikaze-san/tiny-aya-multilingual-safety-models-6af997c8a617ddc3326889bc
 - Datasets (attack conversations gated):
   https://huggingface.co/collections/kamikaze-san/tiny-aya-multilingual-safety-datasets-6af9982d7e17226835a9ac36
